@@ -1,31 +1,3 @@
-// Wait for the DOM content to be fully loaded before executing the script
-document.addEventListener('DOMContentLoaded', function () {
-    // Create an element to display the current time
-    let time = document.createElement('h6');
-    time.id = 'time';
-    document.body.appendChild(time);
-
-    // Create a container for notes
-    let noteContainer = document.createElement('div');
-    noteContainer.id = 'noteContainer';
-    document.body.appendChild(noteContainer);
-
-    // Create a textarea for the note's text
-    let textarea = document.createElement('div');
-    noteContainer.appendChild(textarea);
-
-    // Create a return button and set its click event to navigate to '/index.html'
-    let return_button = document.createElement('button');
-    return_button.textContent = messages.RETURN;
-    return_button.id = 'return-button';
-    return_button.addEventListener('click', () => window.location.href = '/index.html');
-    document.body.appendChild(return_button);
-
-    // Initialize the application and update it every 2 seconds
-    init();
-    setInterval(() => init(), 2000);
-});
-
 // Function to draw notes on the page
 function draw() {
     // Get the note container element
@@ -53,3 +25,31 @@ function draw() {
         textarea.addEventListener("input", () => notegroup.update(note));
     });
 }
+
+// Wait for the DOM content to be fully loaded before executing the script
+document.addEventListener('DOMContentLoaded', function () {
+    // Create an element to display the current time
+    let time = document.createElement('h6');
+    time.id = 'time';
+    document.body.appendChild(time);
+
+    // Create a container for notes
+    let noteContainer = document.createElement('div');
+    noteContainer.id = 'noteContainer';
+    document.body.appendChild(noteContainer);
+
+    // Create a textarea for the note's text
+    let textarea = document.createElement('div');
+    noteContainer.appendChild(textarea);
+
+    // Create a return button and set its click event to navigate to '/index.html'
+    let return_button = document.createElement('button');
+    return_button.textContent = messages.RETURN;
+    return_button.id = 'return-button';
+    return_button.addEventListener('click', () => window.location.href = '/index.html');
+    document.body.appendChild(return_button);
+
+    // Initialize the application and update it every 2 seconds
+    init();
+    setInterval(() => init(), 2000);
+});
