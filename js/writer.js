@@ -72,5 +72,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize the application
     init();
-    setInterval(() => last_saved(), 2000);
 });
